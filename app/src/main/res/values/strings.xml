@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DServer</string>
+    <string name="t1">write command</string>
+    <string name="t2">DBolk not loaded yet...</string>
+</resources>

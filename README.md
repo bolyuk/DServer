@@ -30,7 +30,7 @@ if dbolk:compatibility(3) then
  dbolk:load(file:read(vars:getS("my-lua-lib"))    
     --load lua library from a file
  dbolk:installG()                                 
- dbolk:run(file:read(vars:getS("my-startup-code")  
+ dbolk:run(file:read(vars:getS("my-startup-code")))  
     --run lua code from file (new library will work)
     --it is not recommended to call another code after calling this function
 else

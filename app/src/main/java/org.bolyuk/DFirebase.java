@@ -1,9 +1,10 @@
-package com.atr.dserver.dclasses;
+package org.bolyuk;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -12,31 +13,37 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Method;
 import java.util.HashMap;
 
-public class DFirebase extends DBClass{
+public class DFirebase extends Baser {
 
-    private static HashMap<String, ValueEventListener> observer = new HashMap<String, ValueEventListener>();
-
+    private HashMap<String, ValueEventListener> observer = new HashMap<String, ValueEventListener>();
+    private FirebaseApp app;
     public interface Getter{
         public void onGet(DataSnapshot value);
         public void onCancel(DatabaseError error);
     }
 
 
-    public static void init(){
-        log("firebase initializing....");
-        FirebaseApp.initializeApp(DBContext.getAppContext());
+    public void init(String projectID, String appId, String apiKey, String referenceName){
+        try {
+            kovalski("firebase initializing....", 2);
+             FirebaseOptions options = new FirebaseOptions.Builder()
+                    .setProjectId(projectID)
+                    .setApplicationId(appId)
+                    .setApiKey(apiKey)
+                    .build();
+           app = FirebaseApp.initializeApp(App.getContext(), options,referenceName);
+        }catch (Exception e){ kovalski(e);}
     }
 
-    public static void set(String dpath, Object value){
+    public void set(String dpath, Object value){
 
-        FirebaseDatabase.getInstance().getReference().child(dpath).setValue(value);
+        FirebaseDatabase.getInstance(app).getReference().child(dpath).setValue(value);
     }
 
-    public static void get(String dpath, DFirebase.Getter getter){
-        DatabaseReference db1 = FirebaseDatabase.getInstance().getReference(dpath);
+    public void get(String dpath, Getter getter){
+        DatabaseReference db1 = FirebaseDatabase.getInstance(app).getReference(dpath);
         db1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
@@ -50,51 +57,51 @@ public class DFirebase extends DBClass{
             }});
     }
 
-    public static void get(String dpath){
+    public void get(String dpath){
         get(dpath, new Getter() {
             @Override
             public void onGet(DataSnapshot value) {
-                log(value.toString());
+                kovalski(value.toString(),3);
             }
 
             @Override
             public void onCancel(DatabaseError error) {
-                log("ERROW WHEN TRYING TO GET DATA! \n"+error.getMessage()+"\n"+error.getDetails());
+                kovalski("ERROW WHEN TRYING TO GET DATA! \n"+error.getMessage()+"\n"+error.getDetails(),0);
 
             }
         });
 
     }
 
-    public static void login(String email, String password){
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(
+    public void login(String email, String password){
+        FirebaseAuth.getInstance(app).signInWithEmailAndPassword(email, password).addOnCompleteListener(
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(
                             Task<AuthResult> task){
                         if (task.isSuccessful())
-                           log("Login success");
+                           kovalski("Login success",3);
                         else
-                            log("LOGIN FAILED: \n"+task.getException().getMessage());
+                            kovalski("LOGIN FAILED: \n"+task.getException().getMessage(),0);
                     }
                 });
     }
 
-    public static boolean isLogged(){
-        return FirebaseAuth.getInstance().getCurrentUser() != null;
+    public boolean isLogged(){
+        return FirebaseAuth.getInstance(app).getCurrentUser() != null;
     }
 
-    public static boolean delListener(String dpath) {
+    public boolean delListener(String dpath) {
         if(!observer.containsKey(dpath)) return false;
-        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(dpath);
+        DatabaseReference connectedRef = FirebaseDatabase.getInstance(app).getReference(dpath);
         connectedRef.removeEventListener(observer.get(dpath));
         observer.remove(dpath);
         return true;
     }
 
-    public static boolean addListener(String dpath, DFirebase.Getter getter) {
+    public boolean addListener(String dpath, Getter getter) {
         if(observer.containsKey(dpath)) return false;
-        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(dpath);
+        DatabaseReference connectedRef = FirebaseDatabase.getInstance(app).getReference(dpath);
         observer.put(dpath, connectedRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {

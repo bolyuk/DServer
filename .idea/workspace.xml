@@ -9,7 +9,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acaba4db-bf8f-44b6-a377-b28045137030" name="Default Changelist" comment="Initial commit" />
+    <list default="true" id="acaba4db-bf8f-44b6-a377-b28045137030" name="Default Changelist" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/Baser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/DBolk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/DFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/DTelegram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/EntryPoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/Kovalski.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/BootBroadcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/BootBroadcast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/MainService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DBClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DBolk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DFirebase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/DFirebase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DTelegram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/DVars.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org.bolyuk/DVars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/EntryPoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/dclasses/LuaRunner.java" beforeDir="false" />
+    </list>
     <list id="56280e91-f118-44f2-aa87-dfaac94b3e7b" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +41,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[dar4e6bqqkcyq4ro]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -76,7 +100,7 @@
         <entry key="$PROJECT_DIR$/dserver" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dserver" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -99,7 +123,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/org/luaj/vm2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -110,11 +134,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java" />
       <recent name="$PROJECT_DIR$/app/src/main/java/org/luaj/vm2" />
       <recent name="$PROJECT_DIR$/app/src/main/java/org" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/atr/dserver" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/atr/dserver/jlua" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
@@ -226,6 +250,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code added" />

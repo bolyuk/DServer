@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DServer"
-        android:name="com.atr.dserver.dclasses.DBContext">
+        android:name="org.bolyuk.App">
         <service
             android:name=".MainService"
             android:enabled="true"

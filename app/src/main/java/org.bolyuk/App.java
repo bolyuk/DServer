@@ -1,17 +1,17 @@
-package com.atr.dserver.dclasses;
+package org.bolyuk;
 
 import android.app.Application;
 import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
-public class DBContext  extends Application {
+public class App extends Application {
 
     private static Context context;
 
     public void onCreate() {
         super.onCreate();
-        DBContext.context = getApplicationContext();
+        App.context = getApplicationContext();
     }
 
     @Override
@@ -21,7 +21,7 @@ public class DBContext  extends Application {
     }
 
 
-    public static Context getAppContext() {
-        return DBContext.context;
+    public static Context getContext() {
+        return App.context;
     }
 }

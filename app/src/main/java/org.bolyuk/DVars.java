@@ -1,12 +1,13 @@
-package com.atr.dserver.dclasses;
+package org.bolyuk;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.HashMap;
 
-public class DVars extends DBClass{
+public class DVars extends Baser {
     private static HashMap<String, Object> vars = new HashMap<String, Object>();
+    /*
     private static String path = DBolk.dbolkpath+"/DVar.config";
 
     public static void init(){
@@ -17,7 +18,7 @@ public class DVars extends DBClass{
         else
             save();
     }
-
+*/
     public static void set(String name, Object value){
         if(contains(name)) vars.remove(name);
      vars.put(name, value);
@@ -49,16 +50,16 @@ public class DVars extends DBClass{
     }
 
     public static void save(){
-        log("DVars saving...");
-        DFile.writeToFile(new Gson().toJson(vars),path);
+        //log("DVars saving...");
+        //DFile.write(new Gson().toJson(vars),path);
     }
 
 
     public static void load(){
-        log("DVars loading...");
-        vars = new Gson().fromJson(
-                DFile.readFromFile(path), new TypeToken<HashMap<String, Object>>() {}.getType()
-        );
+        //log("DVars loading...");
+        //vars = new Gson().fromJson(
+       //         DFile.read(path), new TypeToken<HashMap<String, Object>>() {}.getType()
+        //);
     }
 
 }

@@ -4,13 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.atr.dserver.dclasses.DLogger;
+import org.bolyuk.Kovalski;
 
 public class BootBroadcast extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
         context.startService(new Intent(context, MainService.class));
-        DLogger.log("On boot loading...", "BootBroadcast",true);
+        Kovalski.put(3,"On boot loading...");
     }
 }
